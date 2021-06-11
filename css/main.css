@@ -32,7 +32,7 @@
 	--hover-alt: rgb(34, 35, 39);
 	--icon: rgb(200, 200, 200);
 	--text: rgb(240, 240, 240);
-	--text-alt: rgb(180, 180, 180);
+	--text-alt: rgb(170, 170, 170);
 	--lightest: 0.075;
 	--light: 0.1;
 	--dark: 0.125;
@@ -123,7 +123,7 @@ main {
 }
 
 #google-logo {
-	width: 80%;
+	width: 50%;
 	max-width: 272px;
 	margin-bottom: 20px;
 }
@@ -180,6 +180,7 @@ button:hover {
 
 #search-language {
 	margin: 20px;
+	text-align: center;
 	font-size: 13px;
 	color: var(--text);
 }
@@ -225,7 +226,7 @@ footer {
 }
 
 #footer-nav li {
-	padding: 10px 0;
+	padding: 8px 0;
 }
 
 #footer-nav ul li a {
@@ -248,5 +249,18 @@ footer {
 	}
 	#footer-nav ul li a {
 		margin: 4px;
+	}
+}
+
+@media screen and (max-width: 460px) {
+	.nav-link,
+	#search-buttons,
+	#footer-nav #left {
+		display: none;
+	}
+	#country-info,
+	#footer-nav {
+		min-height: 40px;
+		padding: 0 20px;
 	}
 }
