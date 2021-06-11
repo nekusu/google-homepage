@@ -3,20 +3,48 @@
 	padding: 0;
 	border: 0;
 	box-sizing: border-box;
+	outline: none;
 	font-family: Poppins;
 	transition: all 0.25s ease;
-	--gray: rgb(100, 100, 100);
-	--light-gray: rgb(245, 245, 245);
-	--hover-light: rgb(249, 249, 249);
-	--hover-dark: rgb(234, 234, 234);
+	--background: white;
+	--background-alt: rgb(245, 245, 245);
+	--background-dark: rgb(220, 220, 220);
+	--hover: rgb(249, 249, 249);
+	--hover-alt: rgb(234, 234, 234);
+	--icon: rgb(100, 100, 100);
+	--text: rgb(20, 20, 20);
+	--text-alt: rgb(100, 100, 100);
 	--radius: 30px;
-	--close-shadow: 0 2px 6px rgba(0, 0, 0, 0.025), 0 8px 14px rgba(0, 0, 0, 0.0625);
-	--distant-shadow: 0 2px 6px rgba(0, 0, 0, 0.05), 0 12px 20px rgba(0, 0, 0, 0.1);
-	--top-shadow: 0 -2px 6px rgba(0, 0, 0, 0.025), 0 -8px 14px rgba(0, 0, 0, 0.0625);
+	--lightest: 0.025;
+	--light: 0.05;
+	--dark: 0.0625;
+	--darkest: 0.1;
+	--close-shadow: 0 2px 6px rgba(0, 0, 0, var(--lightest)), 0 8px 14px rgba(0, 0, 0, var(--light));
+	--distant-shadow: 0 2px 6px rgba(0, 0, 0, var(--dark)), 0 12px 20px rgba(0, 0, 0, var(--darkest));
+	--top-shadow: 0 -2px 6px rgba(0, 0, 0, var(--lightest)), 0 -8px 14px rgba(0, 0, 0, var(--light));
+}
+
+.dark-mode * {
+	--background: rgb(44, 45, 49);
+	--background-alt: rgb(39, 40, 44);
+	--background-dark: rgb(30, 31, 35);
+	--hover: rgb(41, 42, 46);
+	--hover-alt: rgb(34, 35, 39);
+	--icon: rgb(200, 200, 200);
+	--text: rgb(240, 240, 240);
+	--text-alt: rgb(180, 180, 180);
+	--lightest: 0.075;
+	--light: 0.1;
+	--dark: 0.125;
+	--darkest: 0.175;
+}
+
+.dark-mode {
+	background-color: rgb(44, 45, 49);
 }
 
 .material-icons-round {
-	color: var(--gray);
+	color: var(--icon);
 }
 
 body {
@@ -26,27 +54,43 @@ body {
 	height: 100vh;
 }
 
-li a {
+button {
+	cursor: pointer;
+	background-color: var(--background-alt);
+	border-radius: var(--radius);
+	box-shadow: var(--close-shadow);
+}
+
+li,
+a {
 	text-decoration: none;
 }
 
 li a:hover {
-	background-color: var(--hover-dark);
+	background-color: var(--hover-alt);
 	border-radius: var(--radius);
 }
 
+main,
 nav,
 ul {
 	display: flex;
+	align-items: center;
 }
 
 nav {
-	justify-content: right;
+	justify-content: space-between;
 	padding: 12px 18px;
 }
 
+#dark-mode-button {
+	padding: 6px;
+	border-radius: var(--radius);
+}
+
 nav ul {
-	align-items: center;
+	flex-wrap: wrap;
+	justify-content: right;
 	list-style: none;
 }
 
@@ -58,7 +102,7 @@ nav ul li {
 
 nav ul .nav-link {
 	padding: 6px 12px;
-	color: rgb(20, 20, 20);
+	color: var(--text);
 }
 
 #account-icon {
@@ -76,7 +120,6 @@ main {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
-	align-items: center;
 }
 
 #google-logo {
@@ -92,7 +135,7 @@ main {
 	padding: 6px 20px;
 	margin: 24px 0;
 	border-radius: var(--radius);
-	background-color: var(--light-gray);
+	background-color: var(--background-alt);
 	box-shadow: var(--close-shadow);
 }
 
@@ -109,6 +152,7 @@ main {
 	width: 100%;
 	margin-left: 14px;
 	font-size: 16px;
+	color: var(--text);
 	background-color: transparent;
 }
 
@@ -118,48 +162,41 @@ main {
 }
 
 #search-buttons button {
-	cursor: pointer;
 	padding: 10px 20px;
 	margin: 10px 8px;
-	color: rgb(30, 30, 30);
-	background-color: var(--light-gray);
-	border-radius: var(--radius);
-	box-shadow: var(--close-shadow);
-}
-
-#search-bar input:focus {
-	outline: none;
+	color: var(--text);
 }
 
 #search-bar:hover,
 #search-bar:focus-within,
-#search-buttons button:hover {
-	background-color: var(--hover-light);
+button:hover {
+	background-color: var(--hover);
 }
 
 #search-bar:focus-within,
-#search-buttons button:hover {
+button:hover {
 	box-shadow: var(--distant-shadow);
 }
 
 #search-language {
 	margin: 20px;
 	font-size: 13px;
-}
-
-#search-language a {
-	text-decoration: none;
+	color: var(--text);
 }
 
 #search-language a:hover {
 	text-decoration: underline;
 }
 
+.dark-mode #search-language a {
+	color: var(--text-alt);
+}
+
 footer {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
-	background-color: var(--light-gray);
+	background-color: var(--background-alt);
 	box-shadow: var(--top-shadow);
 }
 
@@ -172,12 +209,12 @@ footer {
 	justify-content: space-between;
 	align-items: center;
 	font-size: 13px;
-	color: var(--gray);
+	color: var(--text-alt);
 }
 
 #footer-nav {
 	margin-left: -12px;
-	border-top: 1px solid rgb(220, 220, 220);
+	border-top: 1px solid var(--background-dark);
 }
 
 #footer-nav ul {
@@ -195,7 +232,7 @@ footer {
 	margin-right: 14px;
 	padding: 6px 12px;
 	text-decoration: none;
-	color: var(--gray);
+	color: var(--text-alt);
 }
 
 @media screen and (max-width: 780px) {

@@ -11,6 +11,7 @@
 
 <body>
 	<nav>
+		<button class="material-icons-round" id="dark-mode-button" onclick="darkMode()">&#xe51c;</button>
 		<ul>
 			<li><a class="nav-link" href="#">Gmail</a></li>
 			<li><a class="nav-link" href="#">Images</a></li>
@@ -50,6 +51,18 @@
 			</div>
 		</div>
 	</footer>
+	<script>
+		function darkMode() {
+			let element = document.body
+
+			if (element.classList.contains("dark-mode"))
+				document.getElementById("dark-mode-button").innerHTML = "&#xe51c;"
+			else
+				document.getElementById("dark-mode-button").innerHTML = "&#xe518;"
+
+			element.classList.toggle("dark-mode")
+		}
+	</script>
 </body>
 
 </html>
