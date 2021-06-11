@@ -1,0 +1,55 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: Poppins;
+	transition: all 0.25s ease;
+	--shadow: 0 2px 6px rgba(0, 0, 0, 0.075), 0 12px 24px rgba(0, 0, 0, 0.175);
+}
+
+nav,
+ul {
+	display: flex;
+}
+
+nav {
+	justify-content: right;
+	padding: 12px 18px;
+}
+
+nav ul {
+	align-items: center;
+	list-style: none;
+}
+
+nav ul li {
+	margin-left: 6px;
+	font-size: 12px;
+	font-weight: 500;
+}
+
+nav ul li a {
+	text-decoration: none;
+	color: rgb(100, 100, 100);
+}
+
+nav ul .nav-link {
+	padding: 6px 12px;
+	color: rgb(20, 20, 20);
+}
+
+#account-icon {
+	margin: 4px;
+	padding: 2px;
+	font-size: 36px;
+}
+
+#apps-icon {
+	margin-left: 6px;
+	padding: 6px;
+}
+
+nav ul li a:hover {
+	background-color: rgb(235, 235, 235);
+	border-radius: 20px;
+}
