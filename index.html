@@ -27,8 +27,8 @@
 			<input type="text">
 		</div>
 		<div id="search-buttons">
-			<button>Google Search</button>
-			<button>I'm Feeling Lucky</button>
+			<a href="https://nekusu.github.io/google-search-results/"><button>Google Search</button></a>
+			<a href="https://nekusu.github.io/google-search-results/"><button>I'm Feeling Lucky</button></a>
 		</div>
 		<div id="search-language">Google offered in: <a href="#">English (US)</a></div>
 	</main>
@@ -54,7 +54,7 @@
 	</footer>
 	<script>
 		function darkMode() {
-			let element = document.body
+			let element = document.documentElement
 
 			if (element.classList.contains("dark-mode"))
 				document.getElementById("dark-mode-button").innerHTML = "&#xe51c;"
@@ -63,6 +63,7 @@
 
 			element.classList.toggle("dark-mode")
 		}
+
 	</script>
 </body>
 
